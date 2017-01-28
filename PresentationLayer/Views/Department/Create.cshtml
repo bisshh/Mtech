@@ -1,0 +1,43 @@
+﻿@model PresentationLayer.Models.DepartmentViewModel
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="wrap">
+            <h2>Create Department</h2>
+            <hr>
+            @using (Html.BeginForm("SaveDepartment", "Department", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="form-group">
+                    <label for="DepartmentName" class="col-sm-4 control-label">@Html.LabelFor(x => x.DepartmentName)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @id = "DepartmentName" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="col-sm-4 control-label">@Html.LabelFor(x => x.Description)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @id = "Description" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="EstdDate" class="col-sm-4 control-label">@Html.LabelFor(x => x.EstdDate)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.EstdDate, new { @class = "form-control", @id = "EstdDate", type = "date" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="DepartmentHead" class="col-sm-4 control-label">@Html.LabelFor(x => x.DepartmentHead)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.DepartmentHead, new { @class = "form-control", @id = "DepartmentHead" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

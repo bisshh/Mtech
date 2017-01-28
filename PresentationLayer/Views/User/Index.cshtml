@@ -1,0 +1,55 @@
+﻿@model PagedList.IPagedList<CoreLayer.User>
+@using PagedList.Mvc;
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="wrap">
+            <h2>User Listing</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    @using (Html.BeginForm("Index", "User", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            @Html.TextBox("SearchString", ViewBag.currentFilter as string, new { @class = "form-control", @id = "search", @placeholder = "Search here.." })
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-4 text-right">
+                    <a href="/User/Register"><div class="btn btn-primary">Add User</div></a>
+                </div>
+            </div>
+            <hr />
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>@Html.ActionLink("Username", "Index", "User", new { sortOrder = ViewBag.UsernameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th>@Html.ActionLink("Password", "Index", "User", new { sortOrder = ViewBag.PasswordSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th>@Html.ActionLink("Inserted Date", "Index", "User", new { sortOrder = ViewBag.EstdSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Username</td>
+                            <td>@item.Password</td>
+                            <td>@item.InsertedDate</td>
+                            <td><i class="fa fa-edit"></i> @Html.ActionLink("Edit", "Edit", "User", new { UserID = item.UserID }, "")</td>
+                            <td><i class="fa fa-trash"></i> @Html.ActionLink("Delete", "DeleteUser", "User", new { UserID = item.UserID }, "")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div style="padding:5px;">
+                <p style="margin-bottom:0;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+                @Html.PagedListPager(Model, page => Url.Action("Index", "User", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
+        </div>
+    </div>
+</div>

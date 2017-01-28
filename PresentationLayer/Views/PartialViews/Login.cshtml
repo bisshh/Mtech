@@ -1,0 +1,45 @@
+﻿@model PresentationLayer.Models.UserLoginViewModel
+
+<div>
+    @if (Session["username"] != null)
+    {
+        <div>
+            <span>Welcome, @Session["username"]</span>
+            <span>@Html.ActionLink("Log Out", "LogOut", "User")</span>
+        </div>
+    }
+
+    else
+    {
+        using (Html.BeginForm("Login", "User", FormMethod.Post))
+        {
+            <div class="col-md-4">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    @Html.TextBoxFor(x => x.Username, new { @placeholder = "Username", @class = "form-control" })
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    @Html.PasswordFor(x => x.Password, new { @placeholder = "Password", @class = "form-control", type = "password" })
+                    @if (ViewData["userMessage"] != null)
+                    {
+                        <div>@ViewData["userMessage"].ToString()</div>
+                    }
+
+                    @if (ViewBag.InvalidUser != null)
+                    {
+                        <div>
+                            <div>ViewBag.InvalidUser</div>
+                        </div>
+                    }
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(x => x.RememberMe) Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Sign in</button>
+                    @Html.ActionLink("Register", "Register", "User", null, new { @class = "btn btn-success"})
+                </form>
+            </div>
+        }
+    }
+</div>

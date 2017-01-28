@@ -1,0 +1,67 @@
+﻿<div class="col-md-3 sidebar">
+    <header class="row">
+        <div class="col-md-12">
+            <a href="@Url.Action("Dashboard", "Home")"><img src="~/Content/themes/base/images/logo.png" alt="MTech College" class="img-responsive"></a>
+        </div>
+    </header>
+    <div class="user-wrap">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/Content/themes/base/images/resham.jpg" alt="" class="img-responsive img-circle">
+            </div>
+                <div class="col-md-8">
+                    <h4>Welcome! <strong>Resham</strong></h4>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
+                        <li><a href="#"><i class="fa fa-gears"></i></a></li>
+                        <li><a href="@Url.Action("LogOut", "User")"><i class="fa fa-power-off"></i></a></li>
+                    </ul>
+                </div>
+        </div>
+    </div> <!-- /user wrap -->
+    <ul class="side-menu" id="accordion" role="tablist" aria-multiselectable="true">
+        <li><a href="@Url.Action("Dashboard", "Home")"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li role="tab" id="itemSix">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix"><i class="fa fa-user-plus"></i> User<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemSix">
+                <li><a href="@Url.Action("Register", "User")">Create User</a></li>
+                <li><a href="@Url.Action("Index", "User")">Edit User</a></li>
+            </ul>
+        </li>
+        <li role="tab" id="itemOne">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-book"></i> Courses<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemOne">
+                <li><a href="@Url.Action("Create", "Course")">Create Course</a></li>
+                <li><a href="@Url.Action("Index", "Course")">Edit Course</a></li>
+            </ul>
+        </li>
+        <li role="tab" id="itemTwo">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><i class="fa fa-key"></i> Level<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemTwo">
+                <li><a href="@Url.Action("Create", "Level")">Create Level</a></li>
+                <li><a href="@Url.Action("Index", "Level")">Edit Level</a></li>
+            </ul>
+        </li>
+        <li role="tab" id="itemThree">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree"><i class="fa fa-object-ungroup"></i> Department<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemThree">
+                <li><a href="@Url.Action("Create", "Department")">Create Department</a></li>
+                <li><a href="@Url.Action("Index", "Department")">Edit Department</a></li>
+            </ul>
+        </li>
+        <li role="tab" id="itemFour">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="fa fa-users"></i> Employee<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemFour">
+                <li><a href="@Url.Action("Create", "Employee")">Create Employee</a></li>
+                <li><a href="@Url.Action("Index", "Employee")">Edit Employee</a></li>
+            </ul>
+        </li>
+        <li role="tab" id="itemFive">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive"><i class="fa fa-graduation-cap"></i> Student<i class="down fa fa-angle-down"></i></a>
+            <ul id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="itemFive">
+                <li><a href="@Url.Action("Create", "Student")">Create Student</a></li>
+                <li><a href="@Url.Action("Index", "Student")">Edit Student</a></li>
+            </ul>
+        </li>
+    </ul>
+</div> <!-- /side bar -->

@@ -1,0 +1,61 @@
+﻿@model PresentationLayer.Models.CourseViewModel
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="wrap">
+            <h2>Create Course</h2>
+            <hr>
+            @using (Html.BeginForm("SaveCourse", "Course", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="form-group">
+                    <label for="DeptID" class="col-sm-4 control-label">@Html.LabelFor(x => x.Department)</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.Department, new SelectList(ViewBag.departmentNames), new { @class = "form-control", @id = "Department" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="LevelID" class="col-sm-4 control-label">@Html.LabelFor(x => x.Level)</label>
+                    <div class="col-sm-8">
+                        @Html.DropDownListFor(x => x.Level, new SelectList(ViewBag.levelNames), new { @class = "form-control", @id = "Level" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="col-sm-4 control-label">@Html.LabelFor(x => x.Name)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @id = "Name" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Duration" class="col-sm-4 control-label">@Html.LabelFor(x => x.Duration)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Duration, new { @class = "form-control", @id = "Duration" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Credit" class="col-sm-4 control-label">@Html.LabelFor(x => x.Credit)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Credit, new { @class = "form-control", @id = "Credit" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="col-sm-4 control-label">@Html.LabelFor(x => x.Description)</label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @id = "Description" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="wrap">
+            <h2>Top 5 Students</h2>
+
+        </div>
+    </div>
+</div>

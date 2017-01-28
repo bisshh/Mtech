@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<PresentationLayer.Models.EmployeeViewModel>
+@using PagedList.Mvc;
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="f-wrap">
+                    <div class="row">
+                        <div class="col-md-8">
+                            @using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+                            {
+                                <div class="input-group">
+                                    @Html.TextBox("SearchString", ViewBag.currentFilter as string, new { @class = "form-control", @id = "search", @placeholder = "Search here.." })
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button"><i class="lnr lnr-magnifier"></i></button>
+                                    </span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <a href="/Employee/Create"><div class="btn btn-primary">Add New</div></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>@Html.ActionLink("FullName", "Index", "Employee", new { sortOrder = ViewBag.FirstNameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                            <th>@Html.ActionLink("MiddleName", "Index", "Employee", new { sortOrder = ViewBag.MiddleNameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                            <th>@Html.ActionLink("LastName", "Index", "Employee", new { sortOrder = ViewBag.LastNameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                            <th>@Html.ActionLink("Department", "Index", "Employee", new { sortOrder = ViewBag.DepartmentSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                            <th>@Html.ActionLink("Inserted Date", "Index", "Employee", new { sortOrder = ViewBag.EstdSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.FirstName</td>
+                                <td>@item.MiddleName</td>
+                                <td>@item.LastName</td>
+                                <td>@item.Email</td>
+                                <td>@item.Department</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Address</td>
+                                <td>@item.Position</td>
+                                <td>@item.Gender</td>
+                                <td>@item.HiredDate</td>
+                                <td>@Html.ActionLink("Edit", "Edit", "Employee", new { EmployeeID = item.EmployeeID }, "")</td>
+                                <td>@Html.ActionLink("Delete", "DeleteEmployee", "Employee", new { EmployeeID = item.EmployeeID }, "")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div style="padding:5px;">
+                    <p style="margin-bottom:0;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", "Employee", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,248 @@
+// Google Font Lato
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+
+// Google Font Opensans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+// Google Font Slab
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+
+// Google Font Poiret
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+// Google Font Dancing Script
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+
+// Google Font Handlee
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+// Google Font Roboto
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900italic);
+
+// Font Family
+#Fonts {
+  .lato (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Lato', sans-serif;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+ 	
+  .opensans (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+  
+  .salb (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Roboto Slab', serif;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+  
+  .poiret (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Poiret One', cursive;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+  
+  .dancing (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Dancing Script', cursive;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+  
+  .handlee (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Handlee', cursive;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+  
+  .roboto (@weight: normal, @lineHeight: 24px) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: @weight;
+    font-size: @fnt-sz;       
+    line-height: @lineHeight;
+	color:@gray;
+  }
+}
+
+// Font Size
+@fnt-sz: 14px;
+@rd-h1: 38px;
+
+// Normal Padding
+@nor-pad: 15px 0;
+
+// Normal line-height
+@nor-line:20px;
+
+// Theme Body Color
+@rd-color: #333;
+
+// Corporate Color
+@theme-color:#01aef0;
+@red-theme: #ec1d23;
+@alt-color:#2e3091;	// alternative color
+
+// Theme Color
+@white: #fff;
+@black: #23272d;
+@dark-green: #1abc9c;
+@green:#2ecc71;
+@blue:#3498db;
+@red: #e74c3c;
+@orange: #e67e22;
+@purple: #9b59b6;
+@yellow: #f1c40f;
+
+// Color
+.cl-dark-green {color:@dark-green !important;}
+.cl-green {color:@green !important;}
+.cl-blue {color:@blue !important;}
+.cl-red {color:@red !important;}
+.cl-orange {color:@orange !important;}
+.cl-purple {color:@purple !important;}
+.cl-yellow {color:@yellow !important;}
+.cl-white {color:@white !important;
+	a {color:@white !important;}
+}
+
+
+// Background
+.bg-dark-green {background:@dark-green !important;}
+.bg-green {background:@green !important;}
+.bg-blue {background:@blue !important;}
+.bg-red {background:@red !important;}
+.bg-orange {background:@orange !important;}
+.bg-purple {background:@purple !important;}
+.bg-yellow {background:@yellow !important;}
+
+@blur:5px;
+
+// Social Color
+@fb-color: #43609c;
+@tw-color: #55acee;
+@ln-color: #0274b3;
+@gp-color: #dd4b39;
+@yt-color: #cc181e;
+@pi-color: #bd081c;
+
+// Text alignment
+@txt-rgt: right;
+@txt-lft: left;
+@txt-cnt: center;
+
+// Margin 15px
+@margin: 15px;
+@margin-btm: 15px;
+@margin-top: 15px;
+@margin-lft:15px;
+@margin-rgt: 15px;
+
+// Padding 15px
+@pad: 15px;
+@pad-btm: 15px;
+@pad-top: 15px;
+@pad-lft:15px;
+@pad-rgt: 15px;
+
+// Transition effect
+@tran-1: all 0.1s ease-in-out;
+@tran-3: all 0.3s ease-in-out;
+
+.transition {transition:@tran-3;-moz-transition: @tran-3;-o-transition: @tran-3;-webkit-transition: @tran-3;}
+.transition1 {transition:@tran-1;-moz-transition: @tran-1;-o-transition: @tran-1;-webkit-transition: @tran-1;}
+
+// Border
+.border(@color: black, @width: 1px) {border: @width solid @color;}
+.border-btm(@color: black, @width: 1px) {border-bottom: @width solid @color;}
+.border-top(@color: black, @width: 1px) {border-top: @width solid @color;}
+.border-left(@color: black, @width: 1px) {border-left: @width solid @color;}
+.border-right(@color: black, @width: 1px) {border-right: @width solid @color;}
+
+// Border Radius
+@radius: 5px;
+
+// Button Format
+.btn(@_) {
+    border:none; border-radius:0;
+	a {color:@white;
+		&:hover {color:@white;}
+	}
+}
+.btn(primary) {
+    background:@blue; .border-btm(darken(@blue, 10%), 3px);
+}
+
+.btn(danger) {
+    background:@red; .border-btm(darken(@red, 10%), 3px);
+}
+
+.btn(success) {
+    background:@green; .border-btm(darken(@green, 10%), 3px);
+}
+
+.btn(warning) {
+    background:@orange; .border-btm(darken(@orange, 10%), 3px);
+}
+
+.btn(default) {
+    background:@theme-color; color:@white;
+}
+
+@type-p: primary;
+@type-s: success;
+@type-d: danger;
+@type-w: warning;
+@type-df: default;
+
+.btn-primary {.btn(@type-p);
+	&:hover {background:darken(@blue, 10%); .border-btm(darken(@blue, 15%), 3px);}
+}
+.btn-success {.btn(@type-s);
+	&:hover {background:darken(@alt-color, 10%); .border-btm(darken(@alt-color, 15%), 3px);}
+}
+.btn-danger {.btn(@type-d);
+	&:hover {background:darken(@red, 10%); .border-btm(darken(@red, 15%), 3px);}
+}
+.btn-warning {.btn(@type-w);
+	&:hover {background:darken(@orange, 10%); .border-btm(darken(@orange, 15%), 3px);}
+}
+
+.btn-default {.btn(@type-df); border-radius:0; .border(1px, @theme-color);
+	&:hover {background:darken(@theme-color, 10%); color:@white;}	
+}
+
+ul {list-style:none;}
+a {color:@rd-color;
+	&:hover {color:@theme-color; text-decoration:none; outline:none;}
+}
+p {line-height:@nor-line;}
+
+// Heading format
+h1 {font-size:@rd-h1;}
+
+// Transition Apply
+a, a:hover {.transition;}
+img, img:hover {.transition1;}
+
+// Body
+body {#Fonts > .roboto; background:@white; color:darken(@rd-color, 10%); line-height:@nor-line; font-weight:400;}
+body, html {height:100%;}
+
+// Body Selection
+::-moz-selection {color: @white; background: lighten(@theme-color, 10%);} //Code for Firefox
+::selection {color: @white; background: lighten(@theme-color, 10%);}
+.form-control {border-radius:0;}

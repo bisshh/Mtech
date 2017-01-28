@@ -1,0 +1,117 @@
+﻿@{
+    string userMessage = TempData["UserMessage"] != null ? TempData["UserMessage"].ToString() : "";
+}
+
+<div class="row boxes">
+    <div class="col-md-3">
+        <div class="box-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="box bg-purple">
+                        <i class="fa fa-book"></i>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Courses
+                        <span>06</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                    <p class="more"><a href="@Url.Action("Create", "Course")">Create Course</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="box bg-orange">
+                        <i class="fa fa-key"></i>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Levels
+                        <span>04</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                    <p class="more"><a href="@Url.Action("Create", "Level")">Create Level</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="box bg-green">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Employee
+                        <span>05</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                    <p class="more"><a href="@Url.Action("Create", "Employee")">Create Employee</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="box">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Student
+                        <span>1,000</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                    <p class="more"><a href="@Url.Action("Create", "Student")">Create Student</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-wrap">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="box bg-blue">
+                        <i class="fa fa-object-ungroup"></i>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        Department
+                        <span>06</span>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                    <p class="more"><a href="@Url.Action("Create", "Department")">Create Department</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- /boxes -->
+

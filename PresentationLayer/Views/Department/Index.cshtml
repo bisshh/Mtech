@@ -1,0 +1,57 @@
+﻿@model PagedList.IPagedList<CoreLayer.Department>
+@using PagedList.Mvc;
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="wrap">
+            <h2>Department Listing</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    @using (Html.BeginForm("Index", "Department", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            @Html.TextBox("SearchString", ViewBag.currentFilter as string, new { @class = "form-control", @id = "search", @placeholder = "Search here.." })
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-4 text-right">
+                    <a href="/Department/Create"><div class="btn btn-primary">Add New</div></a>
+                </div>
+            </div>
+            <hr />
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>@Html.ActionLink("Department Name", "Index", "Department", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th>@Html.ActionLink("Description", "Index", "Department", new { sortOrder = ViewBag.DescriptionSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th>@Html.ActionLink("Department Head", "Index", "Department", new { sortOrder = ViewBag.DeptHeadSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th>@Html.ActionLink("Inserted Date", "Index", "Department", new { sortOrder = ViewBag.EstdSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="lnr lnr-chevron-down"></i></th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.DepartmentName</td>
+                            <td>@item.Description</td>
+                            <td>@item.DepartmentHead</td>
+                            <td>@item.EstdDate</td>
+                            <td><i class="fa fa-edit"></i> @Html.ActionLink("Edit", "Edit", "Department", new { DepartmentID = item.DepartmentID }, "")</td>
+                            <td><i class="fa fa-trash"></i> @Html.ActionLink("Delete", "DeleteDepartment", "Department", new { DepartmentID = item.DepartmentID }, "")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div style="padding:5px;">
+                <p style="margin-bottom:0;">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+                @Html.PagedListPager(Model, page => Url.Action("Index", "Department", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
+        </div>
+    </div>
+</div>

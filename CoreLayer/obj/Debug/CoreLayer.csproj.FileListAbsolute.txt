@@ -1,0 +1,14 @@
+D:\new\CoreLayer\bin\Debug\CoreLayer.dll
+D:\new\CoreLayer\bin\Debug\CoreLayer.pdb
+D:\new\CoreLayer\obj\Debug\CoreLayer.csprojResolveAssemblyReference.cache
+D:\new\CoreLayer\obj\Debug\CoreLayer.dll
+D:\new\CoreLayer\obj\Debug\CoreLayer.pdb
+C:\Users\hp\Dropbox\College\CoreLayer\bin\Debug\CoreLayer.dll
+C:\Users\hp\Dropbox\College\CoreLayer\bin\Debug\CoreLayer.pdb
+C:\Users\hp\Dropbox\College\CoreLayer\obj\Debug\CoreLayer.dll
+C:\Users\hp\Dropbox\College\CoreLayer\obj\Debug\CoreLayer.pdb
+C:\Users\hp\Dropbox\Mtech\CoreLayer\bin\Debug\CoreLayer.dll
+C:\Users\hp\Dropbox\Mtech\CoreLayer\bin\Debug\CoreLayer.pdb
+C:\Users\hp\Dropbox\Mtech\CoreLayer\obj\Debug\CoreLayer.dll
+C:\Users\hp\Dropbox\Mtech\CoreLayer\obj\Debug\CoreLayer.pdb
+C:\Users\hp\Dropbox\Mtech\CoreLayer\obj\Debug\CoreLayer.csprojResolveAssemblyReference.cache

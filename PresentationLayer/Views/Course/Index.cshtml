@@ -1,0 +1,52 @@
+﻿@model PagedList.IPagedList<CoreLayer.Course>
+@using PagedList.Mvc;
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="wrap">
+            <h2>User Listing</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    @using (Html.BeginForm("Index", "Course", FormMethod.Get))
+                    {
+                        <div class="input-group">
+                            @*@Html.TextBox("SearchString", ViewBag.currentFilter as string)*@
+                            <input type="text" class="form-control" placeholder="Search here..">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-4 text-right">
+                    <a href="/Course/Create"><div class="btn btn-primary">Add New</div></a>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>@Html.ActionLink("Course Name", "Index", "Course", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="fa fa-angle-down"></i></th>
+                        <th>@Html.ActionLink("Duration", "Index", "Course", new { sortOrder = ViewBag.DurationSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="fa fa-angle-down"></i></th>
+                        <th>@Html.ActionLink("Credit", "Index", "Course", new { sortOrder = ViewBag.CreditSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="fa fa-angle-down"></i></th>
+                        <th>@Html.ActionLink("Inserted Date", "Index", "Course", new { sortOrder = ViewBag.EstdSortParm, currentFilter = ViewBag.CurrentFilter }, "") <i class="fa fa-angle-down"></i></th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Duration</td>
+                            <td>@item.Credit</td>
+                            <td>@item.InsertedDate</td>
+                            <td><i class="fa fa-edit"></i> @Html.ActionLink("Edit", "Edit", "Course", new { CourseID = item.CourseID }, "")</td>
+                            <td><i class="fa fa-trash"></i> @Html.ActionLink("Delete", "DeleteCourse", "Course", new { CourseID = item.CourseID}, "")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+@{ 
+    string userMessage = TempData["UserMessage"] != null ? TempData["UserMessage"].ToString() : "";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Homepage</title>
+    <link href="/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Welcome to HomePage.</h1>
+                <p></p>
+                @Html.Partial("~/Views/PartialViews/Login.cshtml", new ViewDataDictionary { { "userMessage", userMessage} })
+            </div>
+        </div>
+    </div>
+</body>
+@*<body class="login">
+    <div class="login-wrap">
+        <h2>Member Login<i class="lnr lnr-users"></i></h2>
+        <form>
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="Username"><i class="lnr lnr-user"></i></span>
+                    <input type="text" class="form-control" id="Username" placeholder="Username" aria-describedby="Username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="Password"><i class="lnr lnr-lock"></i></span>
+                    <input type="password" class="form-control" id="Password" placeholder="Password" aria-describedby="Password" />
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:25px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>
+                            <p><a href="#">Forgot password?</a></p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="margin-right: 15px;">Login</button>
+            </div>
+        </form>
+    </div>
+</body>*@
+</html>

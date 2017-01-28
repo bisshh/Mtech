@@ -1,0 +1,22 @@
+﻿@model PresentationLayer.Models.DepartmentViewModel
+{
+    ViewBag.Title = "UpdateDepartment";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Department</title>
+</head>
+<body>
+    <h1>Following Course Data Has been Updated</h1>
+    <div>
+        <p>DepartmentName: @Html.DisplayFor(x => x.DepartmentName)</p>
+        <p>Description: @Html.DisplayFor(x => x.Description)</p>
+        <p>DepartmentHead: @Html.DisplayFor(x => x.EstdDate)</p>
+        <p>EstablishedDate: @Html.DisplayFor(x => x.DepartmentHead)</p>
+    </div>
+</body>
+</html>

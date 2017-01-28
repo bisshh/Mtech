@@ -1,0 +1,61 @@
+﻿@model PresentationLayer.Models.DepartmentViewModel
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="wrap">
+            <h2>Edit Department</h2>
+            @using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Get))
+            {
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="DepartmentName">@Html.LabelFor(x => x.DepartmentName)</label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @id = "DepartmentName" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="Description">@Html.LabelFor(x => x.Description)</label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @id = "Description" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="Estd">@Html.LabelFor(x => x.EstdDate)</label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(x => x.EstdDate, new { @class = "form-control", @id = "Estd" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="DepartmentHead">@Html.LabelFor(x => x.DepartmentHead)</label>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(x => x.EstdDate, new { @class = "form-control", @id = "DepartmentHead" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-default">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>
